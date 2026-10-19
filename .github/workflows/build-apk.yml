@@ -16,10 +16,10 @@ jobs:
         with:
           flutter-version: '3.22.2'
           channel: 'stable'
-      - run: flutter create . --project-name boss_live_football --org com.boss --platforms android
+      - run: flutter create . --project-name boss_live_football --org com.boss --platforms android --overwrite
       - run: flutter pub get
-      - run: flutter build apk --release
+      - run: flutter build apk --debug
       - uses: actions/upload-artifact@v4
         with:
           name: Boss-Live-Football-APK
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
